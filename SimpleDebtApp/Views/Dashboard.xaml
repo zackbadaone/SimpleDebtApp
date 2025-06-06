@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleDebtApp.Views.Dashboard"
+             Title="Dashboard">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <!-- Header -->
+        <Label Text="لوحة التحكم"
+               TextColor="White"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               BackgroundColor="#2E7D32"
+               Padding="10" />
+
+        <!-- Summary Section -->
+        <HorizontalStackLayout Spacing="10">
+            <Frame CornerRadius="10" BorderColor="#B0BEC5" Padding="10">
+                <VerticalStackLayout>
+                    <Label Text="إجمالي الديون" FontSize="16" TextColor="#212121" />
+                    <Label x:Name="TotalDebtLabel" Text="{Binding TotalDebt ,StringFormat='{0}DZ' } " FontSize="14" TextColor="#212121" />
+                </VerticalStackLayout>
+            </Frame>
+            <Frame CornerRadius="10" BorderColor="#B0BEC5" Padding="10">
+                <VerticalStackLayout>
+                    <Label Text="عدد الديون" FontSize="16" TextColor="#212121" />
+                    <Label x:Name="DebtCountLabel" Text="{Binding DebtCount}" FontSize="14" TextColor="#212121" />
+                </VerticalStackLayout>
+            </Frame>
+        </HorizontalStackLayout>
+        <!--Refresh Button-->
+        <Button x:Name="RefreshButton" Command="{Binding RefreshCommand}" Text="تحديث" HeightRequest="40" />
+    </VerticalStackLayout>
+</ContentPage>

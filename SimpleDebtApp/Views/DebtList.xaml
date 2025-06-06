@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleDebtApp.Views.DebtList"
+             Title="DebtList">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <!-- Header -->
+        <Label Text="قائمة الديون"
+               TextColor="White"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               BackgroundColor="#2E7D32"
+               Padding="10" />
+
+        <!-- Debt List -->
+        <ListView x:Name="DebtListView" HeightRequest="400">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Text}" TextColor="White"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>
